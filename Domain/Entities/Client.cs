@@ -1,10 +1,12 @@
 ﻿using Domain.Enums;
+using Domain.ValueObjects;
 
 namespace Domain.Entities;
 
 public class Client
 {
     public int Id { get; private set; }
+    public string PersonalKey { get; set; }
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public string Email { get; private set; }

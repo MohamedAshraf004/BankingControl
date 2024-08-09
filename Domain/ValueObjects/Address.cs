@@ -1,6 +1,6 @@
-﻿namespace Domain.Entities;
+﻿namespace Domain.ValueObjects;
 
-public class Address
+public struct Address
 {
     public string Country { get; private set; }
     public string City { get; private set; }
