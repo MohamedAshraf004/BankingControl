@@ -29,6 +29,8 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.Property(x => x.PersonalKey)
             .HasColumnType("varchar(11)")
             .IsRequired();
+        builder.Property(x => x.Gender)           
+           .IsRequired();
 
         builder.ComplexProperty(x => x.Address, addressBuilder =>
         {
