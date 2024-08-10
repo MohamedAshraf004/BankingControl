@@ -1,6 +1,6 @@
-﻿using Infrastructure.Data;
-using Infrastructure.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Application.Contracts.Persistence;
+using Infrastructure.Data;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +13,9 @@ public static class InfrasturctureDI
     {
         var connectionString = configuration.GetConnectionString("BankingControlConnection");
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+
+        services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+        services.AddScoped<IClientRepository, ClientRepository>();
 
         return services;
     }
