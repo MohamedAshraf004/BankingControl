@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Common.Helpers;
+using Application.Responses;
 
 namespace Application.Client.Commands.Queries.GetClients
 {
-    internal class GetClientsQueryResponse
+    public class GetClientsQueryResponse : BaseResponse
     {
+        public GetClientsQueryResponse(PaginatedList<ClientDto> clients)
+        {
+            Clients = clients;
+        }
+
+        public PaginatedList<ClientDto> Clients { get; set; }
     }
 }

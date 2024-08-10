@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Contracts.Persistence;
+using MediatR;
 
 namespace Application.Client.Commands.Queries.GetClients
 {
-    internal class GetClientsQueryHandler
+    public class GetClientsQueryHandler(IClientRepository clientRepository) : IRequestHandler<GetClientsQuery, GetClientsQueryResponse>
     {
+        public async Task<GetClientsQueryResponse> Handle(GetClientsQuery query, CancellationToken cancellationToken)
+        {
+            var @clients = await clientRepository.GetAll(query);
+
+            return new(clients);
+        }
     }
 }

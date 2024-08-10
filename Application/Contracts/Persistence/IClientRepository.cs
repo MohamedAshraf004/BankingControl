@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Client.Commands.Queries.GetClients;
+using Application.Common.Helpers;
 
 namespace Application.Contracts.Persistence
 {
     public interface IClientRepository : IAsyncRepository<Domain.Entities.Client>
     {
+        Task<PaginatedList<ClientDto>> GetAll(GetClientsQuery query);
     }
 }
