@@ -1,13 +1,12 @@
 ﻿using Domain.Entities;
 using Infrastructure.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace Infrastructure.Data;
 
-public class AppDbContext: DbContext
+public class AppDbContext: IdentityDbContext<ApplicationUser>
 {
     public AppDbContext()
     {
@@ -18,6 +17,7 @@ public class AppDbContext: DbContext
     {
     }
     public DbSet<Client> Clients { get; set; }
+    public DbSet<ApplicationUser> AppUsers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -1,8 +1,9 @@
 using Application;
+using Application.Contracts.Seeding;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using WebAPI.Filters;
-using WebAPI.Middleware;
+using WebAPI.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,6 @@ builder.Services.AddControllers(options =>
     options.InputFormatters.OfType<SystemTextJsonInputFormatter>().First().SupportedMediaTypes.Add(
                             new Microsoft.Net.Http.Headers.MediaTypeHeaderValue("application/csp-report"));
     options.Filters.Add<ApiExceptionFilterAttribute>();
-
 });
 
 builder.Services.AddApplicationServices();
@@ -35,7 +35,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
+await app.SeedDatabaseAsync();
 app.Run();

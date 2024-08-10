@@ -18,6 +18,11 @@ public class BaseResponse
         Success = success;
         Message = message;
     }
+    public BaseResponse(List<string> errors)
+    {
+        ValidationErrors = errors;
+        Success = false;
+    }
     public bool Success { get; set; }
     public string Message { get; set; } = string.Empty;
     public List<string> ValidationErrors { get; set; }

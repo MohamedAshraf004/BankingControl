@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\RegisterUserCommand.HandlerValidator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Features\User\Command\Register\RegisterUserCommandHandlerValidator.cs" />
   </ItemGroup>
 
   <ItemGroup>

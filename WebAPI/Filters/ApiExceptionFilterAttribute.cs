@@ -79,9 +79,6 @@ namespace WebAPI.Filters
             {
                 Status = StatusCodes.Status500InternalServerError,
                 Title = $"An error occurred while processing your request",
-#if DEBUG
-                Detail = JsonSerializer.Serialize(context.Exception)
-#endif
             };
 
             if (context.Exception.Source == "Infrastructure")

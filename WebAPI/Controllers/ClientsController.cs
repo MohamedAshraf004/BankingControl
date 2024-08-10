@@ -1,6 +1,8 @@
 ﻿using Application.Client.Commands.Create;
 using Application.Client.Queries.GetClients;
+using Application.Features.User.Command.Register;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -17,13 +19,14 @@ namespace WebAPI.Controllers
             _logger = logger;
             _mediator = mediator;
         }
-
+        [Authorize]
         [HttpGet(Name = "GetClients")]
         public async Task<GetClientsQueryResponse> Get([FromQuery]GetClientsQuery query)
         {
             return await _mediator.Send(query);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost(Name = "AddClient")]
         public async Task<CreateClientCommandResponse> Create([FromBody] CreateClientCommand command)
         {
