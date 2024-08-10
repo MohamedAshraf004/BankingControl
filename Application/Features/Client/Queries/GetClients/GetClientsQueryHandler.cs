@@ -1,7 +1,7 @@
 ﻿using Application.Contracts.Persistence;
 using MediatR;
 
-namespace Application.Client.Commands.Queries.GetClients
+namespace Application.Client.Queries.GetClients
 {
     public class GetClientsQueryHandler(IClientRepository clientRepository) : IRequestHandler<GetClientsQuery, GetClientsQueryResponse>
     {

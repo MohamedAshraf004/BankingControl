@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 
-namespace Application.Client.Commands.Queries.GetClients
+namespace Application.Client.Queries.GetClients
 {
     public class AccountDto
     {

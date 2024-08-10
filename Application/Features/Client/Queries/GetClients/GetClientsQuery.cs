@@ -1,7 +1,7 @@
 ﻿using Domain.Enums;
 using MediatR;
 
-namespace Application.Client.Commands.Queries.GetClients
+namespace Application.Client.Queries.GetClients
 {
     public class GetClientsQuery : IRequest<GetClientsQueryResponse>
     {
@@ -10,7 +10,7 @@ namespace Application.Client.Commands.Queries.GetClients
         public string Email { get; set; }
 
         public Gender Gender { get; set; }
-        
+
         public bool OrderByDesc { get; set; }
 
         public int PageIndex { get; set; }

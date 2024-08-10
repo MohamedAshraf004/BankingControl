@@ -1,4 +1,4 @@
-﻿using Application.Client.Commands.Queries.GetClients;
+﻿using Application.Client.Queries.GetClients;
 using Application.Common.Helpers;
 
 namespace Application.Contracts.Persistence
