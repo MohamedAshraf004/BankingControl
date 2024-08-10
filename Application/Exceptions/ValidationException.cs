@@ -4,15 +4,18 @@ namespace Application.Exceptions;
 
 public class ValidationException : Exception
 {
-    public List<string> ValdationErrors { get; set; }
-
-    public ValidationException(ValidationResult validationResult)
+    public ValidationException()
+        : base("One or more validation failures have occurred..")
     {
-        ValdationErrors = [];
-
-        foreach (var validationError in validationResult.Errors)
-        {
-            ValdationErrors.Add(validationError.ErrorMessage);
-        }
+        Errors = new Dictionary<string, string[]>();
     }
+
+    public ValidationException(IEnumerable<ValidationFailure> failures)
+        : this()
+    {
+        Errors = failures
+            .GroupBy(e => e.PropertyName, e => e.ErrorMessage)
+            .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
+    }
+    public IDictionary<string, string[]> Errors { get; }
 }

@@ -4,7 +4,7 @@ namespace Application.Client.Commands.Create
 {
     public class AccountInput
     {
-        public string IPAN { get; private set; }
-        public AccountType AccountType { get; private set; }
+        public string IPAN { get; set; }
+        public AccountType AccountType { get; set; }
     }
 }

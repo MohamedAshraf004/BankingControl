@@ -14,7 +14,7 @@ namespace Application.Common.Validators
 
             RuleFor(x => x.IPAN)
                 .NotEmpty()
-                .Matches(ConstsValue.IBAN_REGEX);
+                .Matches(ConstsValue.IBAN_REGEX); //NL39INGB0044332211
         }
     }
 }

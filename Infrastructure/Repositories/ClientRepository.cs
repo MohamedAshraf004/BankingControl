@@ -14,23 +14,16 @@ namespace Infrastructure.Repositories
         public async Task<PaginatedList<ClientDto>> GetAll(GetClientsQuery query)
         {
             var clients = _dbContext.Clients
-                .Include(x=>x.Accounts)
-                .AsNoTracking();
-            if (query.Gender is not null)
-                clients.Where(x => x.Gender == query.Gender.Value);
-
-            if (!string.IsNullOrWhiteSpace(query.ClientName))
-                clients.Where(x => x.FirstName.Contains(query.ClientName, StringComparison.OrdinalIgnoreCase)
-                || x.LastName.Contains(query.ClientName, StringComparison.OrdinalIgnoreCase));
-
-            if (!string.IsNullOrWhiteSpace(query.Email))
-                clients.Where(x => x.Email.Equals(query.Email, StringComparison.OrdinalIgnoreCase));
-
+                .Include(x => x.Accounts).AsNoTracking()
+                .Where(x =>
+                    (query.Gender != null && x.Gender == query.Gender) ||
+                    (!string.IsNullOrWhiteSpace(query.ClientName) && (x.FirstName.Contains(query.ClientName, StringComparison.OrdinalIgnoreCase)
+                        || x.LastName.Contains(query.ClientName, StringComparison.OrdinalIgnoreCase)))
+                    || (!string.IsNullOrWhiteSpace(query.Email) && x.Email.Equals(query.Email, StringComparison.OrdinalIgnoreCase))
+                );
             if (query.OrderByDesc)
                 clients.OrderByDescending(x => x.Id);
-
             var clientsDto = await clients.ProjectTo<ClientDto>(mapper.ConfigurationProvider).ToListAsync();
-            //var clientsDto = clients.Select(mapper.Map<ClientDto>).ToList();
             return PaginatedList<ClientDto>.Create(clientsDto, query.PageIndex, query.PageSize);
         }
     }

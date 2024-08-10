@@ -10,12 +10,13 @@ namespace Application.Common.Validators
         {
             RuleFor(x => x.PostalCode)
                 .NotEmpty()
+                .Length(5)
                 .Matches(ConstsValue.DigitsOnly_REGEX);
             RuleFor(x => x.Country)
                    .NotEmpty();
-            RuleFor(x => x.Country)
+            RuleFor(x => x.City)
                      .NotEmpty();
-            RuleFor(x => x.Country)
+            RuleFor(x => x.Street)
                    .NotEmpty();
         }
     }

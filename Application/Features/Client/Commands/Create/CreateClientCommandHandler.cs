@@ -12,7 +12,7 @@ namespace Application.Client.Commands.Create
         public CreateClientCommandHandler(IMapper mapper, IClientRepository clientRepository)
         {
             _mapper = mapper;
-            this._clientRepository = clientRepository;
+            _clientRepository = clientRepository;
         }
 
         public async Task<CreateClientCommandResponse> Handle(CreateClientCommand request, CancellationToken cancellationToken)

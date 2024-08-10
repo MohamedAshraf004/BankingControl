@@ -11,7 +11,10 @@ namespace Application.Client.Commands.Create
                 .NotEmpty()
                 .MaximumLength(59);
 
-            
+            RuleFor(x => x.PersonalKey)
+                .NotEmpty()
+                .Length(11);
+
             RuleFor(x => x.LastName)
                 .NotEmpty()
                 .MaximumLength(59);
