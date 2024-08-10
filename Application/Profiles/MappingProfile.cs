@@ -1,4 +1,5 @@
 ﻿using Application.Client.Commands.Create;
+using Application.Client.Queries.GetClients;
 using AutoMapper;
 using Domain.ValueObjects;
 
@@ -11,6 +12,14 @@ namespace Application.Profiles
             CreateMap<CreateClientCommand, Domain.Entities.Client>();
             CreateMap<AddressInput, Address>();
             CreateMap<AccountInput, Domain.Entities.Account>();
+
+            CreateMap<ClientDto, Domain.Entities.Client>()
+                .ReverseMap();
+            CreateMap<AddressDto, Address>()
+                .ReverseMap();
+            CreateMap<AccountDto, Domain.Entities.Account>()
+                .ReverseMap();
+
 
 
         }
