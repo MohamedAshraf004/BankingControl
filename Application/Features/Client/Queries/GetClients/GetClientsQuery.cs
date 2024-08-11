@@ -1,7 +1,7 @@
 ﻿using Domain.Enums;
 using MediatR;
 
-namespace Application.Client.Queries.GetClients
+namespace Application.Features.Client.Queries.GetClients
 {
     public class GetClientsQuery : IRequest<GetClientsQueryResponse>
     {

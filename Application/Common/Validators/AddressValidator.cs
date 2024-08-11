@@ -1,4 +1,4 @@
-﻿using Application.Client.Commands.Create;
+﻿using Application.Features.Client.Commands.Create;
 using Domain.Common.Consts;
 using FluentValidation;
 

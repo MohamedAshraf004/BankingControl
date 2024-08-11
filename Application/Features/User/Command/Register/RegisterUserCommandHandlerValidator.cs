@@ -1,7 +1,6 @@
-using Application.Features.User.Command.Register;
 using FluentValidation;
 
-namespace Application.Features.User.Command
+namespace Application.Features.User.Command.Register
 {
     public class RegisterUserCommandHandlerValidator : AbstractValidator<RegisterUserCommand>
     {

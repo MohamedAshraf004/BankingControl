@@ -2,7 +2,7 @@
 using AutoMapper;
 using MediatR;
 
-namespace Application.Client.Commands.Create
+namespace Application.Features.Client.Commands.Create
 {
     public class CreateClientCommandHandler : IRequestHandler<CreateClientCommand, CreateClientCommandResponse>
     {

@@ -1,6 +1,6 @@
 ﻿using Application.Responses;
 
-namespace Application.Client.Commands.Create
+namespace Application.Features.Client.Commands.Create
 {
     public class CreateClientCommandResponse : BaseResponse
     {

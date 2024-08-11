@@ -1,7 +1,7 @@
 ﻿using Application.Common.Helpers;
 using Application.Responses;
 
-namespace Application.Client.Queries.GetClients
+namespace Application.Features.Client.Queries.GetClients
 {
     public class GetClientsQueryResponse : BaseResponse
     {

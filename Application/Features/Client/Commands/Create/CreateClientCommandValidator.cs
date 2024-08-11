@@ -1,11 +1,11 @@
 ﻿using Domain.Common.Consts;
 using FluentValidation;
 
-namespace Application.Client.Commands.Create
+namespace Application.Features.Client.Commands.Create
 {
     public class CreateClientCommandValidator : AbstractValidator<CreateClientCommand>
     {
-        public CreateClientCommandValidator(IValidator<AccountInput> accountValidator,IValidator<AddressInput> addressValidator)
+        public CreateClientCommandValidator(IValidator<AccountInput> accountValidator, IValidator<AddressInput> addressValidator)
         {
             RuleFor(x => x.FirstName)
                 .NotEmpty()
@@ -18,7 +18,7 @@ namespace Application.Client.Commands.Create
             RuleFor(x => x.LastName)
                 .NotEmpty()
                 .MaximumLength(59);
-            
+
             RuleFor(x => x.Email)
                 .NotEmpty()
                 .EmailAddress();
@@ -26,7 +26,7 @@ namespace Application.Client.Commands.Create
             RuleFor(x => x.MobileNumber)
                 .Matches(ConstsValue.Mobile_REGEX);
 
-            RuleFor(x=>x.Gender)
+            RuleFor(x => x.Gender)
                 .NotEmpty()
                 .IsInEnum();
             RuleFor(x => x.Address)

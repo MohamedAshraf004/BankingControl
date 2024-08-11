@@ -1,4 +1,4 @@
-﻿namespace Application.Client.Queries.GetClients
+﻿namespace Application.Features.Client.Queries.GetClients
 {
     public class AddressDto
     {

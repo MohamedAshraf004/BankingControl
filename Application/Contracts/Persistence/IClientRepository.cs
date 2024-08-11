@@ -1,5 +1,5 @@
-﻿using Application.Client.Queries.GetClients;
-using Application.Common.Helpers;
+﻿using Application.Common.Helpers;
+using Application.Features.Client.Queries.GetClients;
 
 namespace Application.Contracts.Persistence
 {

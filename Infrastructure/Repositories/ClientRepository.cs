@@ -1,6 +1,6 @@
-﻿using Application.Client.Queries.GetClients;
-using Application.Common.Helpers;
+﻿using Application.Common.Helpers;
 using Application.Contracts.Persistence;
+using Application.Features.Client.Queries.GetClients;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Domain.Entities;
