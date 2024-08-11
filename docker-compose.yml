@@ -25,4 +25,3 @@ networks:
   net1:
 volumes:
   sqldata:
-         

@@ -1,7 +1,6 @@
 using Application;
 using Application.Contracts.Seeding;
 using Infrastructure;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using WebAPI.Filters;
 using WebAPI.Utilities;
 
@@ -10,8 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers(options =>
 {
-    options.InputFormatters.OfType<SystemTextJsonInputFormatter>().First().SupportedMediaTypes.Add(
-                            new Microsoft.Net.Http.Headers.MediaTypeHeaderValue("application/csp-report"));
     options.Filters.Add<ApiExceptionFilterAttribute>();
 });
 

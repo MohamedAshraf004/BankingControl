@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 
-namespace Application.Client.Commands.Create
+namespace Application.Features.Client.Commands.Create
 {
     public class AccountInput
     {

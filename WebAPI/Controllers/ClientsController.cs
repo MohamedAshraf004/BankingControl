@@ -1,6 +1,6 @@
-﻿using Application.Client.Commands.Create;
-using Application.Client.Queries.GetClients;
+﻿using Application.Features.Client.Commands.Create;
 using Application.Features.Client.Queries.CachedParametersQuery;
+using Application.Features.Client.Queries.GetClients;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

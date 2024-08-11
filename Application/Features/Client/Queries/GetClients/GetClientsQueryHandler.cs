@@ -3,9 +3,9 @@ using Application.Contracts.Persistence;
 using Domain.Common.Consts;
 using MediatR;
 
-namespace Application.Client.Queries.GetClients
+namespace Application.Features.Client.Queries.GetClients
 {
-    public class GetClientsQueryHandler(IClientRepository clientRepository,ICachingService<GetClientsQuery> cachingService) : IRequestHandler<GetClientsQuery, GetClientsQueryResponse>
+    public class GetClientsQueryHandler(IClientRepository clientRepository, ICachingService<GetClientsQuery> cachingService) : IRequestHandler<GetClientsQuery, GetClientsQueryResponse>
     {
 
         public async Task<GetClientsQueryResponse> Handle(GetClientsQuery query, CancellationToken cancellationToken)

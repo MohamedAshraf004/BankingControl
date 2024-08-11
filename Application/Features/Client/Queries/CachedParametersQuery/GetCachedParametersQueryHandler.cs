@@ -1,5 +1,5 @@
-﻿using Application.Client.Queries.GetClients;
-using Application.Contracts.Caching;
+﻿using Application.Contracts.Caching;
+using Application.Features.Client.Queries.GetClients;
 using AutoMapper;
 using Domain.Common.Consts;
 using MediatR;
