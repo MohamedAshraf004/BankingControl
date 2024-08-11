@@ -1,5 +1,6 @@
 ﻿using Application.Client.Commands.Create;
 using Application.Client.Queries.GetClients;
+using Application.Features.Client.Queries.CachedParametersQuery;
 using AutoMapper;
 using Domain.ValueObjects;
 
@@ -20,6 +21,7 @@ namespace Application.Profiles
             CreateMap<AccountDto, Domain.Entities.Account>()
                 .ReverseMap();
 
+            CreateMap<GetClientsQuery, GetCachedParametersQueryResponse>();
 
 
         }

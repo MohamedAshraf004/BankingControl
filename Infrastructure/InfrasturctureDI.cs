@@ -1,6 +1,8 @@
-﻿using Application.Contracts.Identity;
+﻿using Application.Contracts.Caching;
+using Application.Contracts.Identity;
 using Application.Contracts.Persistence;
 using Application.Contracts.Seeding;
+using Infrastructure.Caching;
 using Infrastructure.Data;
 using Infrastructure.Identity;
 using Infrastructure.Models;
@@ -61,7 +63,7 @@ public static class InfrasturctureDI
             .AddJwtBearer(x =>
             {
                 x.SaveToken = true;
-                x.TokenValidationParameters = tokenValidationParameters;                
+                x.TokenValidationParameters = tokenValidationParameters;
             });
 
 
@@ -70,6 +72,7 @@ public static class InfrasturctureDI
         services.AddScoped<IClientRepository, ClientRepository>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<IDbInitializer, DbInitializer>();
+        services.AddSingleton(typeof(ICachingService<>), typeof(CachingService<>));
         return services;
     }
 }

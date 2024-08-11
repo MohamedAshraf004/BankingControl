@@ -6,4 +6,5 @@ public class ConstsValue
     public const string Mobile_REGEX = @"^[+]{1}(?:[0-9\\-\\(\\)\\/" +
                           "\\.]\\s?){6,15}[0-9]{1}$";
     public const string DigitsOnly_REGEX = @"^\d+$";
+    public const string CachedKey = "cahcedParameters";
 }
