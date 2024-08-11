@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "0dd7cd48-0e38-4a4d-8504-6e990207374d",
+		"name": "ControlPanel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25157062",
+		"_collection_link": "https://mc-est.postman.co/workspace/My-Workspace~2f5a0727-faf2-4b58-8a2b-ea5e36b1b187/collection/25157062-0dd7cd48-0e38-4a4d-8504-6e990207374d?action=share&source=collection_link&creator=25157062"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get Clients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2hhbWVkQGdtYWlsLmNvbSIsImp0aSI6IjRhOGJmZjcyLTc5NWYtNGQyNi1iYWY2LWZlMmQyZWNmOGMwZCIsImVtYWlsIjoibW9oYW1lZEBnbWFpbC5jb20iLCJpZCI6Ijg1YjFhNTJhLTQyYTYtNDMyYy05YmZkLTk1NWQ2OGQ5OWUxZCIsInJvbGUiOiJVc2VyIiwibmJmIjoxNzIzMzgzNTUyLCJleHAiOjE3MjMzOTA3NTIsImlhdCI6MTcyMzM4MzU1Mn0.kUxXHuPyccu5b_K379G6lRDG_zK_QTC3hYifv-xK4Io",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/Clients?PageIndex=1&PageSize=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Clients"
+							],
+							"query": [
+								{
+									"key": "PageIndex",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/Clients?ClientName=<string>&Email=<string>&Gender=2&OrderByDesc=<boolean>&PageIndex=<integer>&PageSize=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Clients"
+									],
+									"query": [
+										{
+											"key": "ClientName",
+											"value": "<string>"
+										},
+										{
+											"key": "Email",
+											"value": "<string>"
+										},
+										{
+											"key": "Gender",
+											"value": "2"
+										},
+										{
+											"key": "OrderByDesc",
+											"value": "<boolean>"
+										},
+										{
+											"key": "PageIndex",
+											"value": "<integer>"
+										},
+										{
+											"key": "PageSize",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"validationErrors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"clients\": [\n    {\n      \"id\": \"<integer>\",\n      \"personalKey\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"photoUrl\": \"<string>\",\n      \"gender\": 2,\n      \"mobileNumber\": \"<string>\",\n      \"address\": {\n        \"country\": \"<string>\",\n        \"city\": \"<string>\",\n        \"street\": \"<string>\",\n        \"postalCode\": \"<string>\"\n      },\n      \"accounts\": [\n        {\n          \"id\": \"<integer>\",\n          \"ipan\": \"<string>\",\n          \"accountType\": 2\n        },\n        {\n          \"id\": \"<integer>\",\n          \"ipan\": \"<string>\",\n          \"accountType\": 2\n        }\n      ]\n    },\n    {\n      \"id\": \"<integer>\",\n      \"personalKey\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"photoUrl\": \"<string>\",\n      \"gender\": 2,\n      \"mobileNumber\": \"<string>\",\n      \"address\": {\n        \"country\": \"<string>\",\n        \"city\": \"<string>\",\n        \"street\": \"<string>\",\n        \"postalCode\": \"<string>\"\n      },\n      \"accounts\": [\n        {\n          \"id\": \"<integer>\",\n          \"ipan\": \"<string>\",\n          \"accountType\": 1\n        },\n        {\n          \"id\": \"<integer>\",\n          \"ipan\": \"<string>\",\n          \"accountType\": 1\n        }\n      ]\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"personalKey\": \"12345678901\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"email\": \"string@12.con\",\n  \"photoUrl\": \"string\",\n  \"gender\": 1,\n  \"mobileNumber\": \"+966548613486\",\n  \"address\": {\n    \"country\": \"string\",\n    \"city\": \"string\",\n    \"street\": \"string\",\n    \"postalCode\": \"12345\"\n  },\n  \"accounts\": [\n    {\n      \"ipan\": \"NL39INGB0044332211\",\n      \"accountType\": 1\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Clients",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"personalKey\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"photoUrl\": \"<string>\",\n  \"gender\": 1,\n  \"mobileNumber\": \"<string>\",\n  \"address\": {\n    \"country\": \"<string>\",\n    \"city\": \"<string>\",\n    \"street\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"accounts\": [\n    {\n      \"ipan\": \"<string>\",\n      \"accountType\": 1\n    },\n    {\n      \"ipan\": \"<string>\",\n      \"accountType\": 1\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Clients",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"validationErrors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"clientId\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CachedParameters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBwYW5lbC5jb20iLCJqdGkiOiI1ZjU2MDM0NS1iZWM4LTQ0MzEtOWY0ZC05NjVjYTQ3OWFmMGIiLCJlbWFpbCI6ImFkbWluQHBhbmVsLmNvbSIsImlkIjoiODc4NzU1NzMtMWE3YS00YWJiLTlhMDAtYjUxMzFmZjgyZWE2Iiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzIzMzg4MzM0LCJleHAiOjE3MjMzOTU1MzQsImlhdCI6MTcyMzM4ODMzNH0.ewtibC6qwOQOm8Sm135swU_T0ZNuL09uJLiiidivkqs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44379/Clients/CachedParameters",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44379",
+							"path": [
+								"Clients",
+								"CachedParameters"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Identity",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"mohamed@gmail.com\",\n  \"password\": \"123@QWEqwe\",\n  \"passwordConfirmation\": \"123@QWEqwe\",\n  \"role\": 2\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Identity/Register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Identity",
+										"Register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"passwordConfirmation\": \"<string>\",\n  \"role\": 2\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Identity/Register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Identity",
+												"Register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"validationErrors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"admin@panel.com\", //\"mohamed@gmail.com\",\n  \"password\":\"3QwAs_18_12\" // \"123@QWEqwe\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Identity/Login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Identity",
+										"Login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/Identity/Login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Identity",
+												"Login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"validationErrors\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"token\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "WeatherForecast",
+			"item": [
+				{
+					"name": "Get Weather Forecast",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/WeatherForecast",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"WeatherForecast"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/WeatherForecast",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"WeatherForecast"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"date\": \"<date>\",\n    \"temperatureC\": \"<integer>\",\n    \"temperatureF\": \"<integer>\",\n    \"summary\": \"<string>\"\n  },\n  {\n    \"date\": \"<date>\",\n    \"temperatureC\": \"<integer>\",\n    \"temperatureF\": \"<integer>\",\n    \"summary\": \"<string>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{userToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:44379"
+		},
+		{
+			"key": "userToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2hhbWVkQGdtYWlsLmNvbSIsImp0aSI6IjkwN2U1MzM5LThlMjctNGFmMS04ZjQyLTFkZTQ5YjIxMDc3MiIsImVtYWlsIjoibW9oYW1lZEBnbWFpbC5jb20iLCJpZCI6Ijg1YjFhNTJhLTQyYTYtNDMyYy05YmZkLTk1NWQ2OGQ5OWUxZCIsInJvbGUiOiJVc2VyIiwibmJmIjoxNzIzMzIzMDYyLCJleHAiOjE3MjMzMzAyNjEsImlhdCI6MTcyMzMyMzA2Mn0.z864YwHRMRqmPdqsFUfih_8K6uFmRRFKyrjLs6jdV5M"
+		}
+	]
+}
